@@ -1,0 +1,102 @@
+{
+  "sampleTasks": [
+    {
+      "title": "Complete project documentation",
+      "description": "Write comprehensive documentation for the task manager API including setup instructions, API endpoints, and usage examples",
+      "status": "PENDING",
+      "dueDate": "2024-02-15T10:00:00.000Z"
+    },
+    {
+      "title": "Implement user authentication",
+      "description": "Add JWT-based authentication system with login and registration endpoints",
+      "status": "IN_PROGRESS",
+      "dueDate": "2024-02-10T14:30:00.000Z"
+    },
+    {
+      "title": "Write unit tests",
+      "description": "Create comprehensive unit tests for all service methods and controllers",
+      "status": "PENDING",
+      "dueDate": "2024-02-20T09:00:00.000Z"
+    },
+    {
+      "title": "Setup database migrations",
+      "description": "Configure Prisma migrations and ensure database schema is properly set up",
+      "status": "COMPLETED",
+      "dueDate": "2024-01-30T16:00:00.000Z"
+    },
+    {
+      "title": "Deploy to production",
+      "description": "Deploy the application to production environment with proper environment variables",
+      "status": "PENDING",
+      "dueDate": "2024-02-25T12:00:00.000Z"
+    },
+    {
+      "title": "Code review and refactoring",
+      "description": "Review code quality and refactor any inefficient or poorly structured code",
+      "status": "PENDING"
+    },
+    {
+      "title": "Add task filtering",
+      "description": "Implement filtering and sorting functionality for tasks by status, due date, etc.",
+      "status": "PENDING",
+      "dueDate": "2024-02-18T11:00:00.000Z"
+    },
+    {
+      "title": "Create API documentation",
+      "description": "Generate Swagger/OpenAPI documentation for all endpoints",
+      "status": "IN_PROGRESS",
+      "dueDate": "2024-02-12T15:30:00.000Z"
+    }
+  ],
+  "exampleRequests": {
+    "createTask": {
+      "description": "Example POST request to create a task for user with ID 1",
+      "url": "POST /tasks/1",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "title": "Complete project documentation",
+        "description": "Write comprehensive documentation for the task manager API",
+        "status": "PENDING",
+        "dueDate": "2024-02-15T10:00:00.000Z"
+      }
+    },
+    "createTaskMinimal": {
+      "description": "Minimal task creation (only title required)",
+      "url": "POST /tasks/1",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "title": "Simple task"
+      }
+    },
+    "createTaskWithStatus": {
+      "description": "Create task with specific status",
+      "url": "POST /tasks/2",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "title": "Review code",
+        "description": "Review the latest pull request",
+        "status": "IN_PROGRESS"
+      }
+    }
+  },
+  "curlExamples": [
+    {
+      "description": "Create a new task for user ID 1",
+      "command": "curl -X POST http://localhost:3000/tasks/1 -H \"Content-Type: application/json\" -d '{\"title\": \"Complete project documentation\", \"description\": \"Write comprehensive documentation for the task manager API\", \"status\": \"PENDING\", \"dueDate\": \"2024-02-15T10:00:00.000Z\"}'"
+    },
+    {
+      "description": "Create a simple task with just title",
+      "command": "curl -X POST http://localhost:3000/tasks/1 -H \"Content-Type: application/json\" -d '{\"title\": \"Simple task\"}'"
+    },
+    {
+      "description": "Create an in-progress task",
+      "command": "curl -X POST http://localhost:3000/tasks/2 -H \"Content-Type: application/json\" -d '{\"title\": \"Review code\", \"description\": \"Review the latest pull request\", \"status\": \"IN_PROGRESS\"}'"
+    }
+  ]
+}
