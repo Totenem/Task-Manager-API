@@ -46,3 +46,4 @@ echo "📋 Useful commands:"
 echo "  docker-compose logs -f app    # View app logs"
 echo "  docker-compose down           # Stop containers"
 echo "  docker-compose exec app npx prisma studio  # Open Prisma Studio"
+
